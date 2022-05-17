@@ -1,0 +1,39 @@
+Link - https://practice.geeksforgeeks.org/problems/the-nth-fibonnaci3150/1#
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution{
+public:
+    int fib(int n){
+        //code here
+        if(n == 0) return 0;
+        if(n != 0 and n <= 2) return 1;
+        int a = 1;
+        int b = 1;
+        int c;
+        for(int i = 3; i <= n; i++){
+            c = (a+b)%10;
+            a = b, b = c;
+        }
+        return c;
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        cout << ob.fib(N) << endl;
+    }
+    return 0; 
+}  // } Driver Code Ends
